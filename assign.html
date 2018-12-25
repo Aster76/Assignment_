@@ -1,0 +1,58 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Calculte</title>
+	<style type="text/css">
+	*{
+	margin:auto;
+	}
+	.des{
+	
+		text-align:center;
+		border:3px solid black;
+		margin:10px;
+		width:400px;
+		
+	}
+	.btn{
+		margin:10px;
+	}
+	</style>
+</head>
+<body>
+<div class="des"> 
+	<h1>Add Numbers</h1>
+Number 1: 
+<input type="text"   id="txt1" onkeypress="isInputNumber(event)"/><br /><br />
+Number 2: 
+<input type="text"   id="txt2" onkeypress="isInputNumber(event)"/><br /><br />
+<p id="ans" ></p>
+<button onclick="add()" class="btn">ADD</button>
+<button onclick="sub()" class="btn ">SUB</button>
+</div>
+<script type="text/javascript">
+
+function add() {
+  var y = document.getElementById("txt1").value;
+  var z = document.getElementById("txt2").value;
+  var x = Number(y) + Number(z);
+  document.getElementById("ans").innerHTML = x;
+}
+function sub() {
+  var y = document.getElementById("txt1").value;
+  var z = document.getElementById("txt2").value;
+  var x = Number(y) - Number(z);
+  document.getElementById("ans").innerHTML = x;
+}
+function isInputNumber(evt){
+                
+                var ch = String.fromCharCode(evt.which);
+                
+                if(!(/[0-9]/.test(ch))){
+                    evt.preventDefault();
+                }
+                
+            }
+</script>
+</body>
+</html>
